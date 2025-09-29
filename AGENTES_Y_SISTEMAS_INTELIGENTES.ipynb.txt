@@ -179,13 +179,7 @@
         "                                                                                                                                                  • Use **Basado en Utilidad** cuando:\n",
         "                                                                                                                                                      - Se deben comparar múltiples opciones\n",
         "                                                                                                                                                          - Hay objetivos conflictivos\n",
-        "                                                                                                                                                              - Se busca la mejor decisión posible\n",
-        "\n",
-        "                                                                                                                                                              📚 **Referencias:**\n",
-        "                                                                                                                                                                • Russell, S. & Norvig, P. - Artificial Intelligence: A Modern Approach\n",
-        "                                                                                                                                                                  • Wooldridge, M. - An Introduction to MultiAgent Systems\n",
-        "                                                                                                                                                                    • Universidad de Veracruz CEU - Material de Inteligencia Artificial\n",
-        "                                                                                                                                                                    \"\"\")"
+        "                                                                                                                                                              - Se busca la mejor decisión     
       ],
       "metadata": {
         "id": "hs7OlABMQDnF"
