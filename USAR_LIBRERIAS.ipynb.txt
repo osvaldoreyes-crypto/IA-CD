@@ -1,0 +1,297 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "import random\n",
+        "from datetime import date\n",
+        "\n",
+        "raiz_144 = math.sqrt(144)          # raíz cuadrada\n",
+        "dado = random.randint(1, 6)        # entero aleatorio 1..6\n",
+        "cumple = date(2000, 1, 15)         # cambia a tu fecha real\n",
+        "\n",
+        "print(\"Raíz de 144:\", raiz_144)\n",
+        "print(\"Tiro de dado:\", dado)\n",
+        "print(\"Cumpleaños:\", cumple.isoformat())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NgGzfiq0S_xy",
+        "outputId": "e489ceab-426c-4d4f-c9b4-29fbaf4d2ccc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Raíz de 144: 12.0\n",
+            "Tiro de dado: 4\n",
+            "Cumpleaños: 2000-01-15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "En este ejercicio lo que hicimos fue ver algunas de las funciones de las librerias que se encuentran declaradas a inicio del programa"
+      ],
+      "metadata": {
+        "id": "0MBHYIoRT8_j"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nombre = \"María\"        # str\n",
+        "edad = 17               # int\n",
+        "altura_m = 1.65         # float\n",
+        "estudiante = True       # bool\n",
+        "materias = [\"Mate\", \"Fis\", \"Prog\"]  # list\n",
+        "coordenadas = (19.4, -99.1)         # tuple\n",
+        "unicos = {1, 2, 2, 3}               # set (sin duplicados)\n",
+        "perfil = {\"usuario\": \"maria17\", \"pais\": \"MX\"}  # dict\n",
+        "\n",
+        "print(nombre, type(nombre))\n",
+        "print(edad, type(edad))\n",
+        "print(altura_m, type(altura_m))\n",
+        "print(estudiante, type(estudiante))\n",
+        "print(materias, type(materias))\n",
+        "print(coordenadas, type(coordenadas))\n",
+        "print(unicos, type(unicos))\n",
+        "print(perfil, type(perfil))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qnjqITgsVQv-",
+        "outputId": "87e2bb81-7a1f-4c0f-831b-f613f0289632"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "María <class 'str'>\n",
+            "17 <class 'int'>\n",
+            "1.65 <class 'float'>\n",
+            "True <class 'bool'>\n",
+            "['Mate', 'Fis', 'Prog'] <class 'list'>\n",
+            "(19.4, -99.1) <class 'tuple'>\n",
+            "{1, 2, 3} <class 'set'>\n",
+            "{'usuario': 'maria17', 'pais': 'MX'} <class 'dict'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "continuamente seguimos imprimiendo las variables, pero identificando que tipo de variable es"
+      ],
+      "metadata": {
+        "id": "9fHH9X9UV1rV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a_texto = \"12.5\"\n",
+        "b_texto = \"3\"\n",
+        "\n",
+        "a = float(a_texto)  # 12.5\n",
+        "b = int(b_texto)    # 3\n",
+        "\n",
+        "division = a + b\n",
+        "suma = a / b\n",
+        "\n",
+        "\n",
+        "print(f\"a={a} (float), b={b} (int) -> suma={suma}, división={division:.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1kzGkkotXwLo",
+        "outputId": "fce63a16-c3bf-4a41-c264-2e98c557212e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "a=12.5 (float), b=3 (int) -> suma=4.166666666666667, división=15.50\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "El siguiente ejercicio nos ayudo a entender la importancia se define en la operacion que se esta ejecutando, no en el nombre de las variables"
+      ],
+      "metadata": {
+        "id": "a1hLJC6sZZ2u"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"2 + 3 * 4 =\", 2 + 3 * 4)           # 14\n",
+        "print(\"(2 + 3) * 4 =\", (2 + 3) * 4)       # 20\n",
+        "print(\"7 // 3 =\", 7 // 3, \" 7 % 3 =\", 7 % 3)  # 2 y 1\n",
+        "print(\"2 ** 3 ** 2 =\", 2 ** 3 ** 2)       # 2 ** (3**2) = 2 ** 9 = 512\n",
+        "\n",
+        "# Lógicos: aprobar si promedio>=7 y asistencia>=0.8\n",
+        "promedio, asistencia = 7.2, 0.85\n",
+        "aprueba = (promedio >= 7) and (asistencia >= 0.8)\n",
+        "print(\"¿Aprueba?\", aprueba)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aWIytSpKaFmO",
+        "outputId": "3bd1c1cc-5746-421a-8c63-6a0a47f4e6f7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2 + 3 * 4 = 14\n",
+            "(2 + 3) * 4 = 20\n",
+            "7 // 3 = 2  7 % 3 = 1\n",
+            "2 ** 3 ** 2 = 512\n",
+            "¿Aprueba? True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Esto nos ayuda a observar sobre los signos y los operadores, el como podemos realizar diferentes operaciones y las implicaciones de el orden de los signos"
+      ],
+      "metadata": {
+        "id": "pbdw6GBPbguu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Limpieza y formateo\n",
+        "s = \"   Python ES Genial  \"\n",
+        "limpia = s.strip().lower().replace(\"genial\", \"fantástico\")\n",
+        "palabras = limpia.split()\n",
+        "\n",
+        "print(\"Original:\", repr(s))\n",
+        "print(\"Limpia:\", limpia)\n",
+        "print(\"Palabras:\", palabras)\n",
+        "\n",
+        "# Pequeña utilidad: detectar palíndromos (ignorando espacios y mayúsculas)\n",
+        "def es_palindromo(texto: str) -> bool:\n",
+        "    t = \"\".join(ch.lower() for ch in texto if ch.isalnum())\n",
+        "    return t == t[::-1]\n",
+        "\n",
+        "\n",
+        "print(\"¿Anita lava la tina es palíndromo?\", es_palindromo(\"Anita lava la tina\"))\n",
+        "print(\"¿Hola mundo es palíndromo?\", es_palindromo(\"Hola mundo\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-fM8nkY5dCK_",
+        "outputId": "6ca23166-a9fe-4789-d118-2b9ce879b916"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original: '   Python ES Genial  '\n",
+            "Limpia: python es fantástico\n",
+            "Palabras: ['python', 'es', 'fantástico']\n",
+            "¿Anita lava la tina es palíndromo? True\n",
+            "¿Hola mundo es palíndromo? False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def dividir_seguro(a, b):\n",
+        "    if b == 0:\n",
+        "        raise ValueError(\"No se puede dividir entre cero.\")\n",
+        "    return a / b\n",
+        "\n",
+        "# Ejemplos con manejo de excepciones\n",
+        "casos = [(10, 2), (5, 0), (\"9\", 3)]\n",
+        "for x, y in casos:\n",
+        "    try:\n",
+        "        resultado = dividir_seguro(x, y)\n",
+        "    except TypeError as e:\n",
+        "        print(f\"TypeError con ({x}, {y}): {e}\")\n",
+        "    except ValueError as e:\n",
+        "        print(f\"ValueError con ({x}, {y}): {e}\")\n",
+        "    else:\n",
+        "        print(f\"{x} / {y} = {resultado}\")\n",
+        "    finally:\n",
+        "        pass  # lugar para liberar recursos si fuera necesario"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VWpEmB6ofB71",
+        "outputId": "9040871d-c3a3-4c62-a69e-cff63c452c93"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10 / 2 = 5.0\n",
+            "ValueError con (5, 0): No se puede dividir entre cero.\n",
+            "TypeError con (9, 3): unsupported operand type(s) for /: 'str' and 'int'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "El tema de las librerias es vastante importante, ya que sin ellas nompodriamos trabajar correctamente, dento de los programas, esto nos ayuda a poder ocupar de mejor manera los recursos de la plataforma"
+      ],
+      "metadata": {
+        "id": "GrcwXuOXSORx"
+      }
+    }
+  ]
+}
